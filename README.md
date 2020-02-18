@@ -156,4 +156,16 @@ Output: `-1.5807`
 
 ### Follow-on from our first business question
 
-This may feel intuitive since within each geopgraphy there will be plenty of developers and each at different stages of their careers (thus expertise). But analysing the data further as we did before, it is observed 
+This may feel intuitive since within each geopgraphy there will be plenty of developers and each at different stages of their careers (thus expertise). But analysing the data further as we did before, one observes developers starting out their career on the first professional job with extremely high compensation packages (max salary reported: $ 200k USD/year is also reported from a respondent with 1 year of experience).
+
+Naturally, this makes insight difficult to extract from the data.
+
+# What can be done?
+
+It is required to drill down the data further and extract the maximum of insight it provides to us:
+
+ * One can further drill down and understand where we verify that extremely high paid jobs are given to (potentially) innexperient developers
+ * Understand how skill specialisation translates to the effect of the previous point
+ * Observe which other parameters shape this variance
+
+It is fair to keep an open mind to each dataset a data scientist uses, specially to its state and nature of how the data is gathering.
