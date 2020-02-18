@@ -25,5 +25,6 @@ We ran a sample to understand the data and make sure the data looks ok:
 df = pd.read_csv('survey_results_public.csv')
 df
 ```
+![DataFrame as loaded in Pandas](https://github.com/Halflernation/data-science-project1/images/1.1.png "DataFrame as loaded in Pandas")
 
-[DataFrame as loaded in Pandas](images/1.1.png)
+
