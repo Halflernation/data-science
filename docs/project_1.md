@@ -23,7 +23,7 @@ We ran a sample to understand the data and make sure the data looks ok:
 df = pd.read_csv('survey_results_public.csv')
 df
 ```
-![DataFrame as loaded in Pandas](data-science/project_1/images/1.1.PNG)
+![DataFrame as loaded in Pandas](images/project_1_1.1.PNG)
 
 All OK! So we crack on diving into the data.
 
@@ -56,10 +56,10 @@ possible_values = ["Below $40k", "$40k - $80k", "$80k - $120k", "$120k - $160k",
 plt.title("Compensation distribution");
 plt.xticks([0, 1, 2, 3, 4], possible_values);
 ```
-![Number of responses per compensation ranges](https://github.com/Halflernation/data-science/blob/master/project_1/images/1.2.PNG)
+![Number of responses per compensation ranges](images/project_1_1.2.PNG)
 
 Using SeaBorn library we can easily get a heatmap of correlations between the data points in analysis:
-![Heatmap of correlation](https://github.com/Halflernation/data-science/blob/master/project_1/images/1.3.PNG)
+![Heatmap of correlation](images/project_1_1.3.PNG)
 
 This is a real kick in the teeth!
 
@@ -76,7 +76,7 @@ We have to use the data assuming this is a valuable and honest representation of
 
 We quickly check this by taking the `United Kingdom` (a country that is holds a key spot in being a tech hub at global stage) as a sample and plot the same heatmap.
 
-![UK heatmap of correlation](https://github.com/Halflernation/data-science/blob/master/project_1/images/1.4.PNG)
+![UK heatmap of correlation](images/project_1_1.4.PNG)
 
 Unfortunately we observe no real change. This means StackOverflow data does not allow us to make conclusions on compensation packages based on developer years of experience.
 
@@ -88,7 +88,7 @@ Trying to find out why this is the case, it can quickly be observed in the datas
 df_real.sort_values(by=['YearsCode'])
 ```
 
-![Compensation values sorted by # years coding](https://github.com/Halflernation/data-science/blob/master/project_1/images/1.5.PNG)
+![Compensation values sorted by # years coding](images/project_1_1.5.PNG)
 
 One respondent from Spain has put his annual compensation as being the equivalent to $ 29 USD.
 
@@ -111,7 +111,7 @@ res = df.groupby(['Country']).ConvertedComp.mean().sort_values()
 res
 ```
 
-![Mean compensation by country](https://github.com/Halflernation/data-science/blob/master/project_1/images/2.1.PNG)
+![Mean compensation by country](images/project_1_2.1.PNG)
 
 Overall, Guinea shows the lowest mean annual compensation package when local currency is converted to $ USD.
 
@@ -131,7 +131,7 @@ d = d[columns]
 d
 ```
 
-![Country binary indicator values](https://github.com/Halflernation/data-science/blob/master/project_1/images/3.1.PNG)
+![Country binary indicator values](images/project_1_3.1.PNG)
 
 Therefore, we just need to use the data to build a model to predict the computed compensation salary for a given country.
 
