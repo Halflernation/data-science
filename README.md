@@ -78,7 +78,7 @@ We have to use the data assuming this is a valuable and honest representation of
 
 We quickly check this by taking the `United Kingdom` (a country that is holds a key spot in being a tech hub at global stage) as a sample and plot the same heatmap.
 
-![UK heatmap of correlation](https://github.com/Halflernation/data-science-project1/blob/master/images/1.4.PNG)
+![UK heatmap of correlation](https://github.com/Halflernation/data-science-project1/blob/master/images/1.4.a.PNG)
 
 Unfortunately we observe no real change. This means StackOverflow data does not allow us to make conclusions on compensation packages based on developer years of experience.
 
