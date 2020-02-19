@@ -1,4 +1,4 @@
-![StackOverflow](images/stack_overflow_segfault.png)
+![logo](images/stack_overflow_segfault.png)
 
 # Can You Rely on StackOverflow Developer Survey Data?
 
