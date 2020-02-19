@@ -23,7 +23,7 @@ We ran a sample to understand the data and make sure the data looks ok:
 df = pd.read_csv('survey_results_public.csv')
 df
 ```
-![DataFrame as loaded in Pandas](https://github.com/Halflernation/data-science/blob/master/project_1/images/1.1.PNG)
+![DataFrame as loaded in Pandas](data-science/project_1/images/1.1.PNG)
 
 All OK! So we crack on diving into the data.
 
