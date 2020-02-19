@@ -154,3 +154,7 @@ It is required to drill down the data further and extract the maximum of insight
 It is fair to keep an open mind to each dataset a data scientist uses, specially to its state and nature of how the data is presented and gathered from.
 
 We leave this conclusion with further thoughts on how to utilise the data to extract more insights.
+
+# Code
+
+All code for this project is available on MIT License at: [Github project repository](https://github.com/Halflernation/data-science)
