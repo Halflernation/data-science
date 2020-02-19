@@ -1,5 +1,6 @@
+![StackOverflow](images/stack_overflow_segfault.png)
+
 # Can You Rely on StackOverflow Developer Survey Data?
-![](images/stack_overflow_segfault.PNG)
 
 In this blog post we continue to dissect information from the StackOverflow 2019 survey [https://insights.stackoverflow.com/survey] to extract further insight from how developers are compensated.
 
@@ -20,7 +21,9 @@ Of course many parameters influence, perhaps just as much, the actual compensati
 ## 1. Are developers able to achieve salary progression through years of service?
  * What is the correlation to their demographics?
 
-In order to analyse if we observe correlations between salary compensation and developer experience considering the numbers of years they've been programming, we focus on the data features that provide such information.
+In order to analyse if we observe correlations between salary compensation and developer experience considering the numbers of years they've been programming, we focus on the data features that provide such information:
+
+The dataset holds information in the following fields:
 
 - `ConvertedComp` is the annual compensation value adapted to $ USD from respondent's local currency.
 - `YearsCode` is the number of year(s) the respondent has been coding for.
