@@ -8,7 +8,7 @@
     - To run ML pipeline that trains classifier and saves
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
         
-        Output:
+    - Output:
         
 ```   
 Evaluating model...
