@@ -14,6 +14,9 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
+    df = df.dropna(axis=1, how='all')
+    df = df.dropna(axis=0, how='any')
+    
     categories = df['categories'].str.split(';', expand=True)
     
     row = categories.loc[0,:]
@@ -26,6 +29,12 @@ def clean_data(df):
     
         # convert column from string to numeric
         categories[column] = categories[column].astype(str)
+        
+        # Remove everything not 0s and 1s
+        categories[column] = categories[column][categories[column].isin(['0', '1'])]
+    
+    # drop NA values (there are some present)
+    categories.dropna(how='any', inplace=True)
     
     # drop the original categories column from `df`
     df = df.drop(labels='categories', axis=1)
@@ -39,7 +48,7 @@ def clean_data(df):
 
 def save_data(df, database_filename):
     engine = create_engine('sqlite:///'+database_filename)
-    df.to_sql('messages', engine, index=False)
+    df.to_sql('messages', engine, index=False, if_exists='replace')
 
 
 def main():
@@ -56,8 +65,9 @@ def main():
         
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
-        
+        print(df)
         print('Cleaned data saved to database!')
+        print('DataFrame size: {}'.format(df.count(axis=1)))
     
     else:
         print('Please provide the filepaths of the messages and categories '\
