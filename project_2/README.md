@@ -10,9 +10,7 @@
         
         Output:
         
-```
-Best Parameters: {'features__text_pipeline__tfidf__smooth_idf': True, 'features__text_pipeline__tfidf__sublinear_tf': True}
-        
+```   
 Evaluating model...
 related                   0.734210
 request                   0.778442
@@ -50,7 +48,14 @@ earthquake                0.935645
 cold                      0.993624
 other_weather             0.981072
 direct_report             0.769874
+
+Best Parameters: {'features__text_pipeline__tfidf__smooth_idf': True, 'features__text_pipeline__tfidf__sublinear_tf': True}
+Labels:
+['0' '1']
 ```
+
+No classification output is generated due to `multiclass-multioutput is not supported` error when using sklearn standard functions.
+(labels are purely 0's and 1's: 
 
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
