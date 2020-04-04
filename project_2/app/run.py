@@ -37,12 +37,26 @@ model = joblib.load("../models/classifier.pkl")
 @app.route('/')
 @app.route('/index')
 def index():
-    
     # extract data needed for visuals
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+        
+    ### Graph 1
+    categories = df.drop(['id', 'original', 'message', 'genre'], axis=1)
+    category_names = categories.columns.str.replace("_", " ")
+    categories = categories.astype(int)
     
+    result = pd.DataFrame()
+    death_index = categories[categories['death'] == 1].index
+    indexes = df.index.isin(death_index)
+    cats = categories[indexes] 
+    result = cats.sum() / len(death_index)
+    print(result.sort_values())
+       
+    ### Graph 2
+    # nothing to do, check graph.
+
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
@@ -53,7 +67,6 @@ def index():
                     y=genre_counts
                 )
             ],
-
             'layout': {
                 'title': 'Distribution of Message Genres',
                 'yaxis': {
@@ -63,6 +76,40 @@ def index():
                     'title': "Genre"
                 }
             }
+        },
+        {
+            'data': [
+                Bar(
+                    x=category_names,
+                    y=result
+                )
+            ],
+            'layout': {
+                'title': 'Category correlation towards potential mention of fatalities on the same message',
+                'yaxis': {
+                    'title': "Correlation"
+                },
+                'xaxis': {
+                    'title': "Categories"
+                }
+            }            
+        },
+        {
+            'data': [
+                Bar(
+                    x=category_names,
+                    y=categories.sum()
+                )
+            ],
+            'layout': {
+                'title': 'Total of messages related to each category',
+                'yaxis': {
+                    'title': "Sum"
+                },
+                'xaxis': {
+                    'title': "Categories"
+                }
+            }            
         }
     ]
     
