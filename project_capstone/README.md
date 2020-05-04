@@ -65,6 +65,9 @@ Unfortunately, there's not many users who we'd want to evaluate under the condit
 service and listened to music sequentially, distributed between those who continue to use the service and those
 who have cancelled / downgraded it.
 
+Therefore we'll use F1 score to determine the model's accuracy.
+
+
 
 ### Results
 
@@ -105,8 +108,8 @@ And `regParam` values of:
 [0.0, 0.5, 1.0]
 '''
 
-The test results transform under the testing dataset further predict with a `wooping` xx.x %.
-Although the results are easily affected due to the very small sampling size.
+The test results transform under the testing dataset further predict with a ~84% rate.
+Another showcase the results are easily affected due to the very small sampling size.
 
 
 ### Overall
@@ -115,3 +118,15 @@ The performance of the model is reasonable and more steps are required to identi
 affect `churn` on the Sparkify service.
 
 The current `churn` prediction is valuable and one shouldn't be shy to seek improvements.
+
+# License
+
+This project is licensed under the MIT License:
+
+Copyright 2020 Halflernation
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
