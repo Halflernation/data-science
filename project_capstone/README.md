@@ -2,6 +2,13 @@
 
 This content is part of Udacity Data Science Nano-degree Final Project Capstone.
 
+Blog post at:
+https://medium.com/@marcosilva_20166/data-scientist-capstone-eb008f98817
+
+Code repository:
+https://github.com/Halflernation/data-science/tree/master/project_capstone
+
+
 
 ### Instructions:
 1. Download all data from project_capstone folder
@@ -58,37 +65,36 @@ We evaluate our results against a subset of the `data` where we classify users w
 and users who `have not`. This is essentially a label attached to an individual user, which we'll
 use to later check if the prediction was accurate or not.
 
-We train a Linear Regression and a Logistic Regression model with a split of the `data` as 70%/30%: 
-training / test from the original `data` subset.
+We train a Linear Regression, a Logistic Regression model, and use a Random Forest Classifier, all on a split of data as 70%/30%:
+training / test respectively from the original data subset.
 
 Unfortunately, there's not many users who we'd want to evaluate under the conditions that they have used the
 service and listened to music sequentially, distributed between those who continue to use the service and those
 who have cancelled / downgraded it.
 
+Therefore the use of a Linear Regression is clearly not suitable for the problem at hand and is therefore shown purely as confirmation of this.
 Therefore we'll use F1 score to determine the model's accuracy.
 
+### Metrics
 
+As we highlighted before, the data is evenly distributed. Therefore, to evaluate the predictions we’ll not only explore the accuracy level but the F1 score of the prediction, as typically, any service would want to reduce the false negatives (in this case: predicting that an user would cancel/unsubscribe when in fact it wouldn’t end-up doing so).
 
 ### Results
 
-We build two models using Linear and Logistic regression to predict `churn`.
+We build two models using Linear and Logistic regression to predict churn.
 
-The Linear Regression model does not work as expected and is not able to pick-up. This is due to the non-linear
-relationship between the features.
+The Linear Regression model does not work as expected and is not able to pick-up. This is due to the non-linear relationship between the features.
 
-On the other hand, we're able to predict successfully with the Logistic Regression model with an accuracy
-around ~ 90%.
+On the other hand, we’re able to predict successfully with the Logistic Regression model with an accuracy around ~90% and a F1 score of 96%. This makes it quite a consistent result and shows how the simple observable metrics constructed are a great indicator for predicting churn.
 
-It is true the sample data is really small and this should be having an impact on the overall accuracy 
-and definition of features and how they're truly related to one another. But even changing a few 
-of the models' parameters makes the prediction to still be > 85%.
+It is true the sample data is really small and this should be having an impact on the overall accuracy and definition of features and how they’re truly related to one another. But even changing a few of the models’ parameters makes the prediction to still be > 85%.
+The models parameters output do specify a rough accuracy of 0.838509 (~ 84%), therefore it is assumed that with a larger dataset the accuracy would converge to that value.
 
-The models parameters output do specify a rough accuracy of 0.838509 (~ 84%), therefore it is assumed
-that with a larger dataset the accuracy would converge to that value.
+Again, it is not a great result in terms of model accuracy, but indeed it is an usable model in this scenario where even if the service provider is able to get an indication of a potential change of heart for a given user to change / cancel their subscription and take preemptive action on that prediction.
 
-Again, it is not a great result in terms of model accuracy, but indeed it is an usable model in this scenario
-where even if the service provider is able to get an indication of a potential change of heart for a given
-user to change / cancel their subscription and take preemptive action on that prediction.
+On the Random Forest Classifier, we observe an approximate performance to the Logistic Regression model used previously, with the Random Forest Classifier coming short of around ~5% accuracy.
+
+The Random Forest Classifier registered a prediction rate of ~84% (compared to 90%) and a F1 score of ~90% (compared to 94%).
 
 
 ### Tuning
@@ -118,6 +124,8 @@ The performance of the model is reasonable and more steps are required to identi
 affect `churn` on the Sparkify service.
 
 The current `churn` prediction is valuable and one shouldn't be shy to seek improvements.
+
+The go-to model should be the Logistic Regression model for this type of analysis based on how we modeled the churn analysis via an users’ session longevity and songs played total.
 
 # License
 
