@@ -2,9 +2,6 @@
 
 This content is part of Udacity Data Science Nano-degree Final Project Capstone.
 
-Blog post at:
-https://medium.com/@marcosilva_20166/data-scientist-capstone-eb008f98817
-
 Code repository:
 https://github.com/Halflernation/data-science/tree/master/project_capstone
 
